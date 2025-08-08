@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Employee Details - EMS</title>
+</head>
+<body>
+<t:header/>
+
+<h2>Employee Details</h2>
+
+<p><strong>ID:</strong> ${employee.id}</p>
+<p><strong>Name:</strong> ${employee.name}</p>
+<p><strong>Age:</strong> ${employee.age}</p>
+<p><strong>Address:</strong> ${employee.address}</p>
+
+<t:pagelink page="EmployeeList">Back to Employee List</t:pagelink>
+</body>
+</html>

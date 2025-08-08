@@ -1,0 +1,214 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: Exception in method com.kane.sol.pages.EmployeeEdit.onActivate(java.lang.Long), parameter #1: org.apache.tapestry5.commons.util.CoercionFailedException: Coercion of js to type java.lang.Long (via String --> Long) failed: For input string: "js"
+    context: <EventContext: js, validate-age.js>
+  eventType: activate
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: Exception in method com.kane.sol.pages.EmployeeEdit.onActivate(java.lang.Long), parameter #1: org.apache.tapestry5.commons.util.CoercionFailedException: Coercion of js to type java.lang.Long (via String --> Long) failed: For input string: "js"
+      trace: Handling page render request for page EmployeeEdit
+             Triggering event 'activate' on EmployeeEdit
+             Obtaining value for parameter #1 of com.kane.sol.pages.EmployeeEdit.onActivate(java.lang.Long)
+
+  Exception: java.lang.IllegalArgumentException
+    Message: Exception in method com.kane.sol.pages.EmployeeEdit.onActivate(java.lang.Long), parameter #1: org.apache.tapestry5.commons.util.CoercionFailedException: Coercion of js to type java.lang.Long (via String --> Long) failed: For input string: "js"
+
+  Exception: org.apache.tapestry5.commons.util.CoercionFailedException
+    Message: Coercion of js to type java.lang.Long (via String --> Long) failed: For input string: "js"
+
+  Exception: java.lang.NumberFormatException
+    Message: For input string: "js"
+
+  Stack trace:
+
+  - java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+  - java.base/java.lang.Long.parseLong(Long.java:708)
+  - java.base/java.lang.Long.valueOf(Long.java:1156)
+  - org.apache.tapestry5.commons.internal.BasicTypeCoercions$7.coerce(BasicTypeCoercions.java:127)
+  - org.apache.tapestry5.commons.internal.BasicTypeCoercions$7.coerce(BasicTypeCoercions.java:123)
+  - org.apache.tapestry5.commons.services.CoercionTuple$CoercionWrapper.coerce(CoercionTuple.java:58)
+  - org.apache.tapestry5.commons.internal.services.TypeCoercerImpl$TargetCoercion.coerce(TypeCoercerImpl.java:78)
+  - org.apache.tapestry5.commons.internal.services.TypeCoercerImpl.coerce(TypeCoercerImpl.java:157)
+  - $TypeCoercer_1b86bf10f3bc3.coerce(Unknown Source)
+  - org.apache.tapestry5.internal.services.TypeCoercedValueEncoderFactory$1.toValue(TypeCoercedValueEncoderFactory.java:52)
+  - org.apache.tapestry5.internal.services.ContextValueEncoderImpl.toValue(ContextValueEncoderImpl.java:47)
+  - $ContextValueEncoder_1b86bf10f3c39.toValue(Unknown Source)
+  - org.apache.tapestry5.internal.URLEventContext.get(URLEventContext.java:43)
+  - org.apache.tapestry5.internal.services.ComponentEventImpl.coerceContext(ComponentEventImpl.java:96)
+  - org.apache.tapestry5.internal.transform.OnEventWorker$10.valueForEventHandlerMethodParameter(OnEventWorker.java:703)
+  - org.apache.tapestry5.internal.transform.EventHandlerMethodParameterSource$ParameterExtractor.invoke(EventHandlerMethodParameterSource.java:43)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1292)
+  - org.apache.tapestry5.internal.transform.EventHandlerMethodParameterSource.get(EventHandlerMethodParameterSource.java:66)
+  - com.kane.sol.pages.EmployeeEdit.dispatchComponentEvent(EmployeeEdit.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:924)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1109)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:58)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1054)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1051)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1292)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:158)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1050)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerContextEvent(InternalComponentResourcesImpl.java:289)
+  - org.apache.tapestry5.internal.services.PageActivatorImpl.activatePage(PageActivatorImpl.java:56)
+  - $PageActivator_1b86bf10f3c40.activatePage(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderRequestHandlerImpl.handle(PageRenderRequestHandlerImpl.java:65)
+  - org.apache.tapestry5.modules.TapestryModule$33.handle(TapestryModule.java:2058)
+  - $PageRenderRequestHandler_1b86bf10f3c41.handle(Unknown Source)
+  - $PageRenderRequestHandler_1b86bf10f3c3b.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.lambda$handlePageRender$1(ComponentRequestHandlerTerminator.java:74)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.run(ComponentRequestHandlerTerminator.java:93)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:74)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handlePageRender(DeferredResponseRenderer.java:57)
+  - $ComponentRequestHandler_1b86bf10f3c3c.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:49)
+  - $ComponentRequestHandler_1b86bf10f3c3c.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$2.run(RequestOperationTracker.java:78)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1286)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handlePageRender(RequestOperationTracker.java:71)
+  - $ComponentRequestHandler_1b86bf10f3c3c.handlePageRender(Unknown Source)
+  - $ComponentRequestHandler_1b86bf10f3c09.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:61)
+  - $Dispatcher_1b86bf10f3c0b.dispatch(Unknown Source)
+  - $Dispatcher_1b86bf10f3c00.dispatch(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$RequestHandlerTerminator.service(TapestryHttpModule.java:492)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:31)
+  - $RequestHandler_1b86bf10f3c01.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:1005)
+  - $RequestHandler_1b86bf10f3c01.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:995)
+  - $RequestHandler_1b86bf10f3c01.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_1b86bf10f3c01.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:110)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:100)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:124)
+  - $RequestHandler_1b86bf10f3c01.service(Unknown Source)
+  - $RequestHandler_1b86bf10f3bf7.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$HttpServletRequestHandlerTerminator.service(TapestryHttpModule.java:469)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:69)
+  - $HttpServletRequestFilter_1b86bf10f3bf6.service(Unknown Source)
+  - $HttpServletRequestHandler_1b86bf10f3bf9.service(Unknown Source)
+  - org.apache.tapestry5.http.internal.gzip.GZipFilter.service(GZipFilter.java:60)
+  - $HttpServletRequestHandler_1b86bf10f3bf9.service(Unknown Source)
+  - org.apache.tapestry5.http.modules.TapestryHttpModule$2.service(TapestryHttpModule.java:318)
+  - $HttpServletRequestHandler_1b86bf10f3bf9.service(Unknown Source)
+  - $HttpServletRequestHandler_1b86bf10f3bf1.service(Unknown Source)
+  - org.apache.tapestry5.http.TapestryFilter.runFilter(TapestryFilter.java:178)
+  - org.apache.tapestry5.http.TapestryFilter.doFilter(TapestryFilter.java:225)
+  - org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:201)
+  - org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1626)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:552)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:600)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:505)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+  - org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+  - org.eclipse.jetty.server.Server.handle(Server.java:516)
+  - org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487)
+  - org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732)
+  - org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479)
+  - org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+  - org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+  - org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+  - org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+  - org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+  - org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+  - org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+  - org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+  - org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+  - java.base/java.lang.Thread.run(Thread.java:1623)
+
+REQUEST:
+
+Basic Information:
+
+         contextPath: 
+               flags: requestedSessionIdValid
+              method: GET
+                path: /employeeedit/js/validate-age.js
+              locale: en_US
+          serverName: localhost
+          remoteHost: [0:0:0:0:0:0:0:1]
+
+Headers:
+
+              Accept: */*
+     Accept-Encoding: gzip, deflate, br, zstd
+     Accept-Language: en-US,en;q=0.9,en-IN;q=0.8
+       Cache-Control: no-cache
+          Connection: keep-alive
+              Cookie: JSESSIONID=node0rbl6lprqry331vhxkxwfimhwm2.node0
+                Host: localhost:8080
+              Pragma: no-cache
+             Referer: http://localhost:8080/employeeedit/13
+      Sec-Fetch-Dest: script
+      Sec-Fetch-Mode: no-cors
+      Sec-Fetch-Site: same-origin
+          User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0
+           sec-ch-ua: "Not)A;Brand";v="8", "Chromium";v="138", "Microsoft Edge";v="138"
+    sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "Windows"
+
+SESSION:
+
+           sso:com.kane.sol.security.UserSession: com.kane.sol.security.UserSession@621c08b6
+  state:EmployeeList:grid:defaultPaginationModel: GridPaginationModelImpl[currentPage=null, sortColumnId=id, sortAscending=true]
+
+SYSTEM INFORMATION:
+
+Memory:
+       66,798,528 bytes free
+      260,046,848 bytes total
+    4,118,806,528 bytes max
+
+28 Threads:
+                                                                                             main WAITING
+                                                                                Reference Handler RUNNABLE, daemon, priority 10
+                                                                                        Finalizer WAITING, daemon, priority 8
+                                                                                Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                                                  Attach Listener RUNNABLE, daemon
+                                                                                   Common-Cleaner TIMED_WAITING, daemon, priority 8
+                                                                               Monitor Ctrl-Break RUNNABLE, daemon
+                                                                              Notification Thread RUNNABLE, daemon, priority 9
+                                                                                         Thread-1 WAITING, daemon
+                                                                                   qtp27317011-38 RUNNABLE
+                                                                                   qtp27317011-42 TIMED_WAITING
+                                                                                   qtp27317011-43 RUNNABLE
+                                                                                   qtp27317011-44 TIMED_WAITING
+  qtp27317011-45-acceptor-0@3cdc014f-ServerConnector@3e64cf62{HTTP/1.1, (http/1.1)}{0.0.0.0:8080} RUNNABLE, priority 3
+                                                                   Session-HouseKeeper-66b40dd3-1 TIMED_WAITING
+                                                                          PostgreSQL-JDBC-Cleaner TIMED_WAITING, daemon
+                                                                        Tapestry PeriodicExecutor TIMED_WAITING
+                                                                      Session-Scheduler-c83ed77-1 TIMED_WAITING
+*                                                                                  qtp27317011-59 RUNNABLE
+                                                                                   qtp27317011-63 TIMED_WAITING
+                                                                                   qtp27317011-62 TIMED_WAITING
+                                                                                   qtp27317011-64 RUNNABLE
+                                                                                   qtp27317011-65 RUNNABLE
+                                                                                   qtp27317011-69 TIMED_WAITING
+                                                                                   qtp27317011-70 RUNNABLE
+                                                                                   qtp27317011-71 TIMED_WAITING
+                                                                                   qtp27317011-72 RUNNABLE
+                                                                                   qtp27317011-73 TIMED_WAITING

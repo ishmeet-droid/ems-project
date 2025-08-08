@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Login - EMS</title>
+</head>
+<body>
+<t:header/> <!-- Reusable company header -->
+
+<h2>Login</h2>
+
+<t:form>
+    <p>Username: <t:textfield t:value="username" /></p>
+    <p>Password: <t:passwordfield t:value="password" /></p>
+    <t:submit value="Login"/>
+</t:form>
+
+<p style="color:red">${errorMessage}</p>
+</body>
+</html>

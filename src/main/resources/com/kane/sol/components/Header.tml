@@ -1,0 +1,11 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<div style="background-color:#eef;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+        <h3>${companyName}</h3>
+        <p>${companyAddress}</p>
+    </div>
+    <div>
+        <t:actionlink class="logout-link" t:id="logout">Logout</t:actionlink>
+    </div>
+</div>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+    <title>Employee List – EMS</title>
+</head>
+<body>
+<t:header/>
+<h2>All Employees</h2>
+
+<t:grid source="employees" row="employee" include="id,name,age,address" add="prop:gridAdd">
+
+    <!-- ID column clickable for all-->
+    <p:idCell>
+        <t:pagelink page="EmployeeDetails" context="employee.id">${employee.id}</t:pagelink>
+    </p:idCell>
+
+    <!-- only show Edit if current user is ADMIN -->
+    <!--     <t:if test="currentUser?.role?.name.equals('ADMIN')"> -->
+    <p:editCell>
+        <t:if test="gridAdd.contains('edit')">
+            <t:pagelink context="employee.id" page="EmployeeEdit">
+                Edit
+            </t:pagelink>
+        </t:if>
+    </p:editCell>
+
+    <!-- only show Delete if current user is ADMIN -->
+    <p:deleteCell>
+        <t:if test="gridAdd.contains('delete')">
+            <t:actionlink context="employee.id"
+                          onclick="return confirm('Are you sure you want to delete this employee?');"
+                          t:id="delete">
+                Delete
+            </t:actionlink>
+        </t:if>
+    </p:deleteCell>
+    <!--     </t:if> -->
+
+</t:grid>
+
+
+
+<br/>
+<t:pagelink page="EmployeeAdd">Add New Employee</t:pagelink>
+</body>
+</html>
