@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService {
 
-    @Inject
+    @Inject //@Autowired..
     private EmployeeDao employeeDao;
 
     @Inject
