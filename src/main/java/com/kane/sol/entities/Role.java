@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Role {
    public enum Roles{
-        ADMIN, EMPLOYEE;
+        ADMIN, EMPLOYEE, MANAGER;
     }
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,11 @@ public class Role {
 
     @Enumerated(EnumType.STRING)
     private Roles name;
+
+
+    public Long getId() {
+        return id;
+    }
 
     public Roles getName() {
         return name;

@@ -4,16 +4,21 @@
     <title>Login - EMS</title>
 </head>
 <body>
-<t:header/> <!-- Reusable company header -->
+
+<t:header companyName="Kane Solutions" companyAddress="123 Corporate Lane, Noida" showLogout="false"/>
 
 <h2>Login</h2>
 
-<t:form>
+<t:form t:id="loginForm">
     <p>Username: <t:textfield t:value="username" /></p>
     <p>Password: <t:passwordfield t:value="password" /></p>
     <t:submit value="Login"/>
 </t:form>
 
-<p style="color:red">${errorMessage}</p>
+
+
+<t:if test="errorMessage">
+    <div class="alert alert-danger">${errorMessage}</div>
+</t:if>
 </body>
 </html>

@@ -5,7 +5,9 @@
         <p>${companyAddress}</p>
     </div>
     <div>
-        <t:actionlink class="logout-link" t:id="logout">Logout</t:actionlink>
+        <t:if test="showLogout">
+            <t:pagelink page="Login" class="logout-link" t:event="logout">Logout</t:pagelink>
+        </t:if>
     </div>
 </div>
 </html>

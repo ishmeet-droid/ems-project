@@ -2,9 +2,21 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 <head>
     <title>Employee Details - EMS</title>
+    <style>
+        .popup { border:1px solid #ccc;padding:10px;display:none;position:absolute;background:#fff; }
+        .popup img { max-width:300px; }
+    </style>
+    <script>
+        function toggleImagePopup() {
+            var p = document.getElementById('imgPopup');
+            p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+            return false;
+        }
+    </script>
 </head>
 <body>
-<t:header/>
+
+<t:header companyName="Kane Solutions" companyAddress="123 Corporate Lane, Noida" />
 
 <h2>Employee Details</h2>
 
@@ -12,6 +24,27 @@
 <p><strong>Name:</strong> ${employee.name}</p>
 <p><strong>Age:</strong> ${employee.age}</p>
 <p><strong>Address:</strong> ${employee.address}</p>
+<p><strong>Role:</strong> ${employee.roleName}</p>
+
+<p>
+    <t:actionlink onclick="return toggleImagePopup();">IMAGE</t:actionlink>
+</p>
+<div id="imgPopup" class="popup">
+    <img src="${empImage}" alt="Employee image"/>
+</div>
+
+    <t:if test="infoMessage">
+        <div class="alert alert-success">${infoMessage}</div>
+    </t:if>
+<t:empbday employeeId="employee.id" employeeName="employee.name" gender="employee.gender" birthDate="employee.dob"/>
+
+
+<p>
+    <t:eventlink t:event="promote" context="employee.id">PROMOTE</t:eventlink>
+    <t:if test="errorMessage">
+        <div class="alert alert-danger">${errorMessage}</div>
+    </t:if>
+</p>
 
 <t:pagelink page="EmployeeList">Back to Employee List</t:pagelink>
 </body>

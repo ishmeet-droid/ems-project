@@ -1,6 +1,7 @@
 package com.kane.sol.pages;
 
 
+import com.kane.sol.dto.EmployeeDto;
 import com.kane.sol.entities.Employee;
 import com.kane.sol.services.EmployeeService;
 import org.apache.tapestry5.annotations.Import;
@@ -14,7 +15,7 @@ public class EmployeeEdit {
     private Long employeeId;
 
     @Property
-    private Employee employee;
+    private EmployeeDto employee;
 
     @Inject
     private EmployeeService employeeService;

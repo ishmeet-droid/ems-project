@@ -7,6 +7,7 @@ public interface EmployeeDao {
     List<Employee> findAll();
     List<Employee> search(String keyword);
     Employee findById(Long id);
+    Employee findByUsername(String username);
     Employee findByCredentials(String name, String password);
     void save(Employee e);
     void delete(Employee e);

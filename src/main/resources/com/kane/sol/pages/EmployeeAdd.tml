@@ -4,7 +4,8 @@
     <title>Add Employee - EMS</title>
 </head>
 <body>
-<t:header/>
+
+<t:header companyName="Kane Solutions" companyAddress="123 Corporate Lane, Noida" />
 
 <h2>Add New Employee</h2>
 

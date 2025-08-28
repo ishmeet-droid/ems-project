@@ -1,0 +1,5 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<t:if test="showToday">
+    <t:wishbanner text="bannerText" color="bannerColor"/>
+</t:if>
+</html>

@@ -3,6 +3,7 @@ package com.kane.sol.entities;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "employee")
@@ -14,6 +15,25 @@ public class Employee {
     private String name;
     private int age;
     private String address;
+
+    private String gender;
+    private Date dob;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
 
     @Column(nullable = false)
     private String password;

@@ -35,9 +35,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Root<Employee> root = cq.from(Employee.class);
 
         Predicate byName = cb.like(cb.lower(root.get("name")), keyword.toLowerCase() + "%");
-        Predicate byId = cb.like(cb.toString(root.get("id")), keyword + "%");
 
-        cq.select(root).where(cb.or(byName, byId));
+        cq.select(root).where(cb.or(byName));
         return entityManager.createQuery(cq).getResultList();
     }
 
@@ -45,6 +44,24 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public Employee findById(Long id) {
         return entityManager.find(Employee.class, id);
+    }
+
+    @Override
+    public Employee findByUsername(String username) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+        Root<Employee> root = cq.from(Employee.class);
+
+        cq.select(root).where(
+                cb.and(
+                        cb.equal(root.get("name"), username)
+                )
+        );
+
+        return entityManager.createQuery(cq)
+                .getResultStream()
+                .findFirst()
+                .orElse(null);
     }
 
     @Override

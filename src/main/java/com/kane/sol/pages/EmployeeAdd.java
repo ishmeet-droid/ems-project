@@ -1,5 +1,6 @@
 package com.kane.sol.pages;
 
+import com.kane.sol.dto.EmployeeDto;
 import com.kane.sol.entities.Employee;
 import com.kane.sol.services.EmployeeService;
 import org.apache.tapestry5.annotations.Property;
@@ -28,8 +29,10 @@ public class EmployeeAdd {
     @NotBlank
     private String address;
 
+    Object onFailureFromForm() { return this; }
+
     Object onSuccess() {
-        Employee e = new Employee();
+        EmployeeDto e = new EmployeeDto();
         e.setName(name);
         e.setAge(age);
         e.setAddress(address);

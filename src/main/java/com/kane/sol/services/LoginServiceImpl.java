@@ -1,5 +1,6 @@
 package com.kane.sol.services;
 
+import com.kane.sol.dto.EmployeeDto;
 import com.kane.sol.entities.Employee;
 import com.kane.sol.pages.Login;
 import com.kane.sol.services.LoginService;
@@ -24,8 +25,8 @@ public class LoginServiceImpl implements LoginService {
 
     @Log
     @Override
-    public Employee validate(String username, String password) {
-        Employee emp = employeeService.findByCredentials(username, password);
+    public EmployeeDto validate(String username, String password) {
+        EmployeeDto emp = employeeService.findByCredentials(username, password);
         if (emp != null) {
 //            this.currentUser = e;
             logger.info("userExists");
@@ -33,4 +34,11 @@ public class LoginServiceImpl implements LoginService {
         }
         return null;
     }
+
+    @Override
+    public EmployeeDto validateUserName(String username) {
+        return employeeService.getEmployeeByUserName(username);
+    }
+
+
 }

@@ -4,16 +4,25 @@ import com.kane.sol.pages.Login;
 import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class Header {
-    @Property
-    private final String companyName = "Kane Solutions";
-    @Property
-    private final String companyAddress = "123 Corporate Lane, Noida";
 
+    @Parameter(required = false, allowNull = false, defaultPrefix = "literal")
+    @Property
+    private String companyName;
+
+    @Parameter(required = false, allowNull = false, defaultPrefix = "literal")
+    @Property
+    private String companyAddress;
+
+
+    @Parameter(required = false, value = "true") // show logout by default
+    @Property
+    private boolean showLogout;
 
     @Inject
     private HttpServletRequest request;
@@ -22,7 +31,7 @@ public class Header {
      * Handles the click on the logout link (t:id="logout").
      * Invalidates the session and navigates to the Login page.
      */
-    @OnEvent(value = EventConstants.ACTION, component = "logout")
+//    @OnEvent(value = EventConstants.ACTION, component = "logout")
     Object onLogout() {
         // Invalidate existing session (clears @Persist(SESSION) fields, etc.)
         if (request.getSession(false) != null) {

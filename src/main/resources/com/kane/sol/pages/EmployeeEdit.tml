@@ -4,7 +4,7 @@
     <title>Edit Employee</title>
 </head>
 <body>
-<t:header/>
+<t:header companyName="Kane Solutions" companyAddress="123 Corporate Lane, Noida" />
 
 <h2>Edit Employee #${employee.id}</h2>
 <t:form t:id="form" onsubmit="return validateAge();">

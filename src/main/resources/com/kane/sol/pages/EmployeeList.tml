@@ -6,8 +6,19 @@
     <title>Employee List – EMS</title>
 </head>
 <body>
-<t:header/>
+<t:header companyName="Kane Solutions" companyAddress="123 Corporate Lane, Noida" />
+
 <h2>All Employees</h2>
+
+<t:form t:id="searchForm">
+    <label>Search: </label>
+    <t:textfield t:id="query"
+                 t:value="query"
+                 t:mixins="autocomplete"
+                 minChars="2" delay="200"
+                 placeholder="Type a name..."/>
+    <t:submit value="Find"/>
+</t:form>
 
 <t:grid source="employees" row="employee" include="id,name,age,address" add="prop:gridAdd">
 
