@@ -8,10 +8,7 @@ import com.kane.sol.services.LoginService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.tapestry5.PersistenceConstants;
-import org.apache.tapestry5.annotations.InjectComponent;
-import org.apache.tapestry5.annotations.Persist;
-import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.http.Link;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -49,6 +46,9 @@ public class EmployeeList {
     @Inject
     private PageRenderLinkSource linkSource;
 
+    @InjectPage
+    private EmployeeDetails employeeDetails;
+
     void setupRender()
     {
         logger.info("currentUser: {}", userSession.getCurrentUser() != null ? userSession.getCurrentUser().getName() : null);
@@ -80,8 +80,10 @@ public class EmployeeList {
 
 
         if (e != null) {
-            Link link = linkSource.createPageRenderLinkWithContext(EmployeeDetails.class, e.getId());
-            return link;
+//            Link link = linkSource.createPageRenderLinkWithContext(EmployeeDetails.class, e.getId());
+//            return link;
+            employeeDetails.set(e);
+            return employeeDetails;
             }
             return this;
 

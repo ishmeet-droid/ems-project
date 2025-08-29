@@ -42,6 +42,10 @@ public class EmployeeDetails {
     @Property
     private Asset empImage;
 
+    public void set(EmployeeDto emp) {
+        this.employee = emp;
+    }
+
     void onActivate(Long id) {
         employee = employeeService.getEmployeeById(id);
     }
@@ -65,7 +69,7 @@ public class EmployeeDetails {
         return null;
     }
 
-    //FMK: Listen to bubbling event from child component (WishBanner -> EmpBday -> Page)
+    //FMK: Listen to bubbling event from child component (EmpBday -> Page)
     Object onWished(Long id) {
         infoMessage = "Birthday wish delivered for employee #" + id;
 
